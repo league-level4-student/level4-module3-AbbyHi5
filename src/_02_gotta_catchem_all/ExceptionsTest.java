@@ -10,20 +10,14 @@ class ExceptionsTest {
 	
 	//1. This is an example of how one might test that an exception is thrown.
 	//   It tests that an IndexOutOfBoundsException is thrown 
-	@Test
-	public void testIndexOOBException() {
-		int[] vars = {0, 1, 2, 3};
-			
-		try {
-			vars[0] = 4;
-			assertArrayEquals(vars, new int[] {4, 1, 2, 3});
-			vars[4] = 5;
-			fail("IndexOutOfBoundsException not thrown");
-		}catch(IndexOutOfBoundsException e) {
-			e.printStackTrace();
-			assertArrayEquals(vars, new int[] {4, 1, 2, 3});
-		}
-	}
+	/*
+	 * @Test public void testIndexOOBException() { int[] vars = {0, 1, 2, 3};
+	 * 
+	 * try { vars[0] = 4; assertArrayEquals(vars, new int[] {4, 1, 2, 3}); vars[4] =
+	 * 5; fail("IndexOutOfBoundsException not thrown");
+	 * }catch(IndexOutOfBoundsException e) { e.printStackTrace();
+	 * assertArrayEquals(vars, new int[] {4, 1, 2, 3}); } }
+	 */
 	
 	//2. In the ExceptionMethods class, write a method called divide that takes
 	//   two doubles as parameters and returns their quotient as a double. This method 
@@ -32,6 +26,15 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
+		double double1 = 0.0;
+		double double2 = 2.0;
+		ExceptionMethods eM = new ExceptionMethods();
+		try {
+			eM.devide(double1,double2);
+			fail("IllegalArgumentException not thrown");
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
