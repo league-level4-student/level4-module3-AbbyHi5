@@ -28,9 +28,8 @@ class ExceptionsTest {
 	public void testDivideByZeroException() {
 		double double1 = 0.0;
 		double double2 = 2.0;
-		ExceptionMethods eM = new ExceptionMethods();
 		try {
-			eM.devide(double1,double2);
+			em.devide(double1,double2);
 			fail("IllegalArgumentException not thrown");
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
@@ -45,7 +44,27 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		String test1 = "word";
+		String test2 = "banana";
+		String test3 = "";
+		try {
+			em.reverseString(test1);
+			assertEquals("drow", em.reverseString(test1));
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
+		try {
+			em.reverseString(test2);
+			assertEquals("ananab", em.reverseString(test2));
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
+		try {
+			em.reverseString(test3);
+			fail("IllegalStateException not thrown");
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

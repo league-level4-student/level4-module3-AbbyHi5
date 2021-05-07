@@ -9,4 +9,20 @@ public class ExceptionMethods {
 			return num1/num2;
 			}
 		}
+	
+
+	public String reverseString (String input){
+		String reversed = "";
+		if(input == "") {
+			throw new IllegalStateException();
+		}
+		
+		for (int i = input.length()-1; i > -1; i--) {
+			reversed = reversed + input.charAt(i);
+			//System.out.println(reversed);
+		}
+		
+	return reversed;
+		}
 	}
+
